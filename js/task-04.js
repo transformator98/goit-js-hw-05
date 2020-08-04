@@ -10,13 +10,34 @@
  *
  */
 
-// const builder = new StringBuilder('.');
+class StringBuilder {
+  constructor(value) {
+    this._value = value;
+  }
+  get value() {
+    return this._value;
+  }
 
-// builder.append('^');
-// console.log(builder.value); // '.^'
+  append(str) {
+    this._value += str;
+  }
+  prepend(str) {
+    this._value = str += this._value;
+  }
+  pad(str) {
+    this._value = str += this._value += str;
+  }
+}
 
-// builder.prepend('^');
-// console.log(builder.value); // '^.^'
+const builder = new StringBuilder('.');
 
-// builder.pad('=');
-// console.log(builder.value); // '=^.^='
+console.log(builder.value);
+
+builder.append('^');
+console.log(builder.value); // '.^'
+
+builder.prepend('^');
+console.log(builder.value); // '^.^'
+
+builder.pad('=');
+console.log(builder.value); // '=^.^='
