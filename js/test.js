@@ -1,6 +1,3 @@
-/**
- * Напиши класс Car с указанными свойствами и методами.
- */
 class Car {
   /*
    * Добавь статический метод `getSpecs(car)`,
@@ -8,7 +5,7 @@ class Car {
    * в консоль значения свойств maxSpeed, speed, isOn, distance и price.
    */
   static getSpecs(car) {
-    console.log('car: ', car);
+    console.log(car);
   }
 
   /*
@@ -36,6 +33,7 @@ class Car {
   get price() {
     return this._price;
   }
+
   set price(value) {
     this._price = value;
   }
@@ -85,7 +83,7 @@ class Car {
    */
   drive(hours) {
     if (this.isOn) {
-      this.distance += this.speed * hours;
+      this.distance += hours * this.speed;
     }
   }
 }
