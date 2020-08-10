@@ -23,6 +23,7 @@ class Storage {
     for (let i = 0; i < this.items.length; i += 1) {
       if (this.items[i] === item) {
         this.items.splice(i, 1);
+        break;
       }
     }
   }
